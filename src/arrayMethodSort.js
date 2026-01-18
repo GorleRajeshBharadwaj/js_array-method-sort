@@ -6,8 +6,10 @@
 function applyCustomSort() {
   [].__proto__.sort2 = function(compareFunction) {
     // write code here
-    const callback = compareFunction ?? (a, b) => String(a).localeCompare(String(b));
-    
+    const callback = typeof compareFunction === 'function'
+      ? compareFunction
+      : (a, b) => String(a).localeCompare(String(b));
+
     for (let i = this.length - 1; i > 0; i--) {
       for(let j = 0; j < i; j++) {
         if (callback(this[j], this[i]) > 0) {
