@@ -8,7 +8,7 @@ function applyCustomSort() {
     // write code here
     const callback = typeof compareFunction === 'function'
       ? compareFunction
-      : (a, b) => String(a).localeCompare(String(b));
+      : (a, b) => String(a).localeCompare(String(b), undefined, { sensitivity: 'case' });
 
     for (let i = this.length - 1; i > 0; i--) {
       for(let j = 0; j < i; j++) {
