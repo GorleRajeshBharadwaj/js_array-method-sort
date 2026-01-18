@@ -6,9 +6,13 @@
 function applyCustomSort() {
   [].__proto__.sort2 = function(compareFunction) {
     // write code here
-    for (let i = this.length; i > 1; i--) {
+    if (compareFunction === undeined || typeof compareFunction !== 'function') {
+      compareFunction = (a, b) => String(a).localeCompare(String(b));
+    }
+    
+    for (let i = this.length - 1; i > 0; i--) {
       for(let j = 0; j < i; j++) {
-        if (compareFunction(this[j], this[i]) < 0) {
+        if (compareFunction(this[j], this[i]) > 0) {
           swap(this, i, j);
         }
       }
