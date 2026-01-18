@@ -13,6 +13,8 @@ function applyCustomSort() {
         }
       }
     }
+
+    return this;
   };
 }
 
