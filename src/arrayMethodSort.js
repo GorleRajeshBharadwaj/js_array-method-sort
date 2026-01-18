@@ -6,11 +6,6 @@
 function applyCustomSort() {
   [].__proto__.sort2 = function(compareFunction) {
     // write code here
-     * Implement method Sort
- */
-function applyCustomSort() {
-  [].__proto__.sort2 = function(compareFunction) {
-    // write code here
     const callback = typeof compareFunction === 'function'
       ? compareFunction
       : (a, b) =>
