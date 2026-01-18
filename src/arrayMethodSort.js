@@ -29,23 +29,4 @@ function swap(arr, firstElementIndex, secondElementIndex) {
   arr[secondElementIndex] = tempPlaceHolder;
 }
 
-
-    for (let i = this.length - 1; i > 0; i--) {
-      for(let j = 0; j < i; j++) {
-        if (callback(this[j], this[i]) > 0) {
-          swap(this, i, j);
-        }
-      }
-    }
-
-    return this;
-  };
-}
-
-function swap(arr, firstElementIndex, secondElementIndex) {
-  const tempPlaceHolder = arr[firstElementIndex];
-  arr[firstElementIndex] = arr[secondElementIndex];
-  arr[secondElementIndex] = tempPlaceHolder;
-}
-
 module.exports = applyCustomSort;
